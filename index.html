@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>তোমাকে — একটি চিঠি</title>
+
+    <!-- Bengali Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top left, rgba(255,255,255,.5), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(120,100,70,.08), transparent 35%),
+                #ddd7cc;
+
+            color: #302d29;
+            font-family: "Noto Serif Bengali", serif;
+            padding: 60px 20px;
+        }
+
+
+        /* =========================
+           MAIN PAPER
+        ========================= */
+
+        .letter-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .paper {
+            position: relative;
+
+            background:
+                linear-gradient(
+                    rgba(255,255,255,.12),
+                    rgba(255,255,255,.12)
+                ),
+                #fbf8ef;
+
+            min-height: 1000px;
+
+            padding: 90px 95px;
+
+            box-shadow:
+                0 30px 70px rgba(0,0,0,.18),
+                0 5px 15px rgba(0,0,0,.08);
+
+            border: 1px solid rgba(70,60,45,.18);
+
+            overflow: hidden;
+        }
+
+
+        /* Paper texture */
+
+        .paper::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            pointer-events: none;
+
+            opacity: .20;
+
+            background-image:
+                radial-gradient(
+                    rgba(80,70,55,.22) .5px,
+                    transparent .5px
+                );
+
+            background-size: 8px 8px;
+        }
+
+
+        /* Inner border */
+
+        .paper::after {
+            content: "";
+
+            position: absolute;
+
+            top: 25px;
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+
+            border: 1px solid rgba(70,60,45,.13);
+
+            pointer-events: none;
+        }
+
+
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* =========================
+           TOP
+        ========================= */
+
+        .top-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-family: "Noto Sans Bengali", sans-serif;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+            color: #81786c;
+
+            margin-bottom: 65px;
+        }
+
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        .header {
+            text-align: center;
+
+            margin-bottom: 65px;
+        }
+
+        .title {
+            font-size: 52px;
+
+            font-weight: 600;
+
+            letter-spacing: 3px;
+
+            color: #292621;
+
+            margin-bottom: 18px;
+        }
+
+
+        .subtitle {
+            font-family: "Playfair Display", serif;
+
+            font-size: 14px;
+
+            font-style: italic;
+
+            color: #857c70;
+
+            letter-spacing: 2px;
+        }
+
+
+        .ornament {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 16px;
+
+            margin-top: 25px;
+        }
+
+        .line {
+            width: 90px;
+
+            height: 1px;
+
+            background: #91877a;
+        }
+
+        .diamond {
+            width: 7px;
+            height: 7px;
+
+            transform: rotate(45deg);
+
+            background: #70675c;
+        }
+
+
+        /* =========================
+           LETTER BODY
+        ========================= */
+
+        .letter {
+            font-size: 18px;
+
+            line-height: 2.05;
+
+            letter-spacing: .05px;
+        }
+
+
+        .letter p {
+            margin-bottom: 29px;
+        }
+
+
+        .opening {
+            font-size: 23px;
+
+            font-weight: 600;
+
+            margin-bottom: 35px !important;
+        }
+
+
+        .emphasis {
+            font-weight: 600;
+        }
+
+
+        /* Short emotional lines */
+
+        .short-lines {
+            margin: 34px 0 36px;
+
+            padding-left: 25px;
+
+            border-left: 2px solid rgba(100,90,75,.35);
+
+            color: #514b43;
+        }
+
+        .short-lines div {
+            margin: 3px 0;
+        }
+
+
+        /* =========================
+           SPECIAL QUOTE
+        ========================= */
+
+        .quote {
+            position: relative;
+
+            margin: 40px 15px;
+
+            padding: 20px 30px;
+
+            background: rgba(100,90,70,.045);
+
+            border-left: 2px solid #81776a;
+
+            color: #565047;
+
+            font-style: italic;
+        }
+
+
+        /* =========================
+           FINAL SECTION
+        ========================= */
+
+        .ending {
+            margin-top: 65px;
+
+            padding-top: 45px;
+
+            border-top: 1px solid rgba(80,70,55,.18);
+        }
+
+
+        .ending p {
+            margin-bottom: 11px;
+        }
+
+
+        .final-wish {
+            margin-top: 30px !important;
+
+            font-weight: 600;
+
+            font-size: 19px;
+        }
+
+
+        /* =========================
+           SIGNATURE
+        ========================= */
+
+        .signature-area {
+            margin-top: 55px;
+        }
+
+        .signature {
+            font-family: "Playfair Display", serif;
+
+            font-size: 30px;
+
+            font-style: italic;
+
+            color: #3d3832;
+
+            margin-top: 10px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            margin-top: 70px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(80,70,55,.15);
+
+            text-align: center;
+
+            font-family: "Noto Sans Bengali", sans-serif;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+            color: #92897d;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width: 700px) {
+
+            body {
+                padding: 15px 8px;
+            }
+
+            .paper {
+                padding: 55px 27px;
+
+                min-height: auto;
+            }
+
+            .paper::after {
+                top: 14px;
+                left: 14px;
+                right: 14px;
+                bottom: 14px;
+            }
+
+            .top-info {
+                margin-bottom: 45px;
+
+                font-size: 9px;
+            }
+
+            .title {
+                font-size: 38px;
+            }
+
+            .header {
+                margin-bottom: 45px;
+            }
+
+            .letter {
+                font-size: 16px;
+
+                line-height: 1.95;
+            }
+
+            .opening {
+                font-size: 20px;
+            }
+
+            .short-lines {
+                padding-left: 18px;
+            }
+
+            .quote {
+                margin-left: 0;
+                margin-right: 0;
+
+                padding: 16px 20px;
+            }
+
+            .signature {
+                font-size: 27px;
+            }
+        }
+
+
+        /* =========================
+           PRINT / A4
+        ========================= */
+
+        @media print {
+
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                padding: 0;
+
+                background: white;
+            }
+
+            .letter-container {
+                width: 210mm;
+
+                max-width: none;
+
+                margin: 0;
+            }
+
+            .paper {
+                width: 210mm;
+
+                min-height: 297mm;
+
+                padding: 20mm 21mm;
+
+                box-shadow: none;
+
+                border: none;
+            }
+
+            .paper::before {
+                display: none;
+            }
+
+            .paper::after {
+                display: block;
+
+                top: 9mm;
+                left: 9mm;
+                right: 9mm;
+                bottom: 9mm;
+            }
+
+            .letter {
+                font-size: 14px;
+
+                line-height: 1.85;
+            }
+
+            .letter p {
+                margin-bottom: 15px;
+            }
+
+            .header {
+                margin-bottom: 35px;
+            }
+
+            .title {
+                font-size: 34px;
+            }
+
+            .top-info {
+                margin-bottom: 30px;
+            }
+
+            .ending {
+                margin-top: 35px;
+
+                padding-top: 25px;
+            }
+
+            .footer {
+                margin-top: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="letter-container">
+
+    <article class="paper">
+
+        <div class="content">
+
+
+            <!-- TOP INFORMATION -->
+
+            <div class="top-info">
+                <span>একটি অসমাপ্ত গল্প</span>
+                <span>✦</span>
+            </div>
+
+
+            <!-- HEADER -->
+
+            <header class="header">
+
+                <h1 class="title">তোমাকে</h1>
+
+                <div class="subtitle">
+                    কিছু কথা, যা বলা হয়ে ওঠেনি
+                </div>
+
+                <div class="ornament">
+                    <span class="line"></span>
+                    <span class="diamond"></span>
+                    <span class="line"></span>
+                </div>
+
+            </header>
+
+
+            <!-- LETTER -->
+
+            <main class="letter">
+
+                <p class="opening">
+                    তোমাকে,
+                </p>
+
+
+                <p>
+                    জানি না এই চিঠিটা তোমাকে দেওয়া উচিত কি না। অনেকবার লিখতে বসেছি,
+                    আবার সব মুছে দিয়েছি। মনে হয়েছে, কী হবে এসব লিখে? তুমি তো আর
+                    আগের জায়গায় নেই… আমিও হয়তো নেই।
+                </p>
+
+
+                <p>
+                    তবুও আজ লিখছি। কারণ কিছু কথা অনেকদিন ধরে নিজের মধ্যে রাখতে রাখতে
+                    ক্লান্ত হয়ে গেছি।
+                </p>
+
+
+                <p>
+                    আমি জানি না তুমি আমাকে এখন কীভাবে ভাবো। হয়তো খুব একটা ভাবোই না।
+                    হয়তো তোমার জীবন অনেক দূর এগিয়ে গেছে। কিন্তু আমার মাঝে মাঝে এখনো
+                    মনে হয়, যদি তোমার সঙ্গে একটু কথা বলতে পারতাম… শুধু একটু।
+                    কোনো ঝগড়া না, কোনো অভিযোগ না। শুধু আগের মতো দুটো কথা।
+                </p>
+
+
+                <p class="emphasis">
+                    আমি সত্যি তোমাকে অনেক ভালোবেসেছিলাম।
+                </p>
+
+
+                <p>
+                    এই কথাটা বলতে আমার এখনো লজ্জা লাগে না।
+                </p>
+
+
+                <p>
+                    হয়তো আমি perfect ছিলাম না। অনেক ভুল করেছি। অনেক কথা ঠিকভাবে
+                    বলতে পারিনি। কখনো বেশি কিছু চেয়েছি, কখনো তোমাকে বুঝতে পারিনি।
+                    হয়তো আমার কিছু আচরণ তোমাকে কষ্টও দিয়েছে।
+                </p>
+
+
+                <p>
+                    কিন্তু একটা জিনিস কখনো fake ছিল না—তোমাকে নিয়ে আমার feelings।
+                </p>
+
+
+                <p>
+                    তুমি জানো না, তোমাকে হারানোর পর কতবার নিজেকে বুঝিয়েছি যে,
+                    “এবার move on করতে হবে।”
+                </p>
+
+
+                <div class="short-lines">
+
+                    <div>“ওকে আর মনে করবি না।”</div>
+                    <div>“পুরোনো কথা ভাববি না।”</div>
+                    <div>“সব শেষ।”</div>
+
+                </div>
+
+
+                <p>
+                    কিন্তু মনকে কি আর এভাবে বোঝানো যায়?
+                </p>
+
+
+                <p>
+                    কোনো একটা গান শুনি, তোমার কথা মনে পড়ে।
+                    কোনো একটা জায়গা দেখি, মনে হয় তুমি থাকলে হয়তো ভালো লাগত।
+                    রাতে একা থাকলে হঠাৎ মনে হয়, এখন যদি তোমার একটা message আসত…
+                </p>
+
+
+                <p>
+                    তারপর ফোনটা হাতে নিই।
+                </p>
+
+
+                <p>
+                    কিছুক্ষণ দেখি।
+                </p>
+
+
+                <p>
+                    তারপর আবার রেখে দিই।
+                </p>
+
+
+                <p>
+                    কারণ জানি, সবকিছু আগের মতো আর হবে না।
+                </p>
+
+
+                <p class="emphasis">
+                    সবচেয়ে কষ্টের ব্যাপার জানো কী?
+                </p>
+
+
+                <p>
+                    আমি তোমাকে শুধু miss করি না।
+                </p>
+
+
+                <p>
+                    আমি সেই মানুষটাকেও miss করি, যে তোমার সঙ্গে থাকলে আমি ছিলাম।
+                </p>
+
+
+                <div class="quote">
+
+                    আমার হাসি…<br>
+                    আমার অপেক্ষা…<br>
+                    ছোট ছোট বিষয় নিয়ে excited হওয়া…<br>
+                    কাউকে নিজের মানুষ মনে করার feeling…
+
+                </div>
+
+
+                <p>
+                    এসবও হারিয়ে গেছে কোথায় যেন।
+                </p>
+
+
+                <p>
+                    অনেক সময় তোমার ওপর রাগ হয়। মনে হয়, তুমি কেন আমাকে এমন একটা
+                    জায়গায় রেখে গেলে যেখানে আমি চাইলেও তোমাকে hate করতে পারি না?
+                </p>
+
+
+                <p>
+                    তারপর আবার নিজের ওপরই রাগ হয়।
+                </p>
+
+
+                <p>
+                    কারণ এতকিছুর পরও তোমার খারাপ চাইতে পারি না।
+                </p>
+
+
+                <p>
+                    তুমি ভালো থেকো—এই কথাটা বলতে এখনো আমার কষ্ট হয়। কিন্তু সত্যি বলতে,
+                    আমি চাই তুমি ভালো থাকো।
+                </p>
+
+
+                <p>
+                    হয়তো আমার সঙ্গে না।<br>
+                    হয়তো আমার জীবনে না।
+                </p>
+
+
+                <p>
+                    তবুও ভালো থাকো।
+                </p>
+
+
+                <p>
+                    আমি তোমাকে ফিরে আসতে বলছি না। এই চিঠির উত্তর দিতেই হবে—সেটাও না।
+                </p>
+
+
+                <p>
+                    শুধু একটা কথা তোমাকে জানাতে চেয়েছিলাম—
+                </p>
+
+
+                <p>
+                    তুমি আমার জীবনে এমন একজন ছিলে, যাকে আমি সত্যি করে ভালোবেসেছিলাম।
+                    এমনভাবে, যেভাবে হয়তো কাউকে আগে ভালোবাসিনি।
+                </p>
+
+
+                <p>
+                    আর যদি কখনো আমার কথা তোমার মনে পড়ে, তখন শুধু এটুকু মনে রেখো—
+                </p>
+
+
+                <p>
+                    আমি তোমার জীবনে perfect মানুষ ছিলাম না।<br>
+                    হয়তো অনেক ভুল করেছি।
+                </p>
+
+
+                <p class="emphasis">
+                    কিন্তু তোমাকে ভালোবাসার জায়গায় আমি মিথ্যা ছিলাম না।
+                </p>
+
+
+                <p>
+                    আজও মাঝে মাঝে তোমাকে খুব মনে পড়ে।
+                </p>
+
+
+                <p>
+                    খুব।
+                </p>
+
+
+                <p>
+                    কিন্তু এখন আর তোমাকে পাওয়ার জন্য লিখছি না।
+                </p>
+
+
+                <p>
+                    শুধু বুকের মধ্যে জমে থাকা কথাগুলো একটু হালকা করার জন্য লিখলাম।
+                </p>
+
+
+                <p>
+                    হয়তো একদিন সত্যিই তোমাকে ছাড়া স্বাভাবিক হয়ে যাব।
+                    হয়তো একদিন তোমার কথা মনে পড়লেও আর বুকটা এমন করে ব্যথা করবে না।
+                </p>
+
+
+                <p>
+                    কিন্তু তুমি আমার জীবনের যে সময়টুকু ছিলে, সেটা আমি কখনো অস্বীকার
+                    করতে পারব না।
+                </p>
+
+
+                <p>
+                    কারণ তুমি ছিলে।
+                </p>
+
+
+                <p>
+                    আর কোনো কোনো মানুষ চলে যাওয়ার পরও, তাদের কিছুটা আমাদের ভেতরে
+                    থেকে যায়।
+                </p>
+
+
+                <p>
+                    তুমিও থেকে গেছো।
+                </p>
+
+
+                <p>
+                    তবে তোমার সাথে একটা শেষ আলিঙ্গন হওয়া দরকার ছিল।
+                </p>
+
+
+                <p>
+                    আলিঙ্গন না হলেও অন্তত একবার দেখা করে শেষ কথাগুলো বলা দরকার ছিল।
+                    কিছু কথা সামনাসামনি বললে হয়তো বুকটা একটু হালকা হতো।
+                </p>
+
+
+                <p>
+                    হয়তো তোমার সামনে দাঁড়িয়ে শেষবারের মতো কিছু কথা বলতাম,
+                    হয়তো কিছুই বলতে পারতাম না। শুধু দেখতাম।
+                </p>
+
+
+                <p>
+                    তবে থাক।
+                </p>
+
+
+                <p>
+                    এখন আমি চাই না আর আমাদের দেখা হোক।
+                </p>
+
+
+                <p>
+                    কারণ যদি আবার দেখা হয়ে যায়, হয়তো তোমাকে আরও বেশি মনে পড়বে।
+                    আবার হয়তো সেই পুরোনো অনুভূতিগুলো ফিরে আসবে। তাই দূরে থাকাটাই
+                    হয়তো ভালো।
+                </p>
+
+
+                <p>
+                    তুমি আমাকে মনে রেখো না।
+                </p>
+
+
+                <p>
+                    সত্যি বলছি, মনে রেখো না।
+                </p>
+
+
+                <p>
+                    তুমি আমাকে ভুলে গেছো—এটাতেই আমি খুশি।
+                </p>
+
+
+                <p>
+                    কারণ আমি চাই না আমার জন্য তোমার জীবনে কোনো অস্বস্তি থাকুক।
+                </p>
+
+
+                <p>
+                    তবে একটা কথা বলব।
+                </p>
+
+
+                <p>
+                    তুমি যা করো, একটু বুঝে-শুনে করো। আমার সাথে এখন তোমার কোনো সম্পর্ক নেই।
+                    তবুও আমি চাই তুমি তোমার নিজের চরিত্রটা ধরে রাখো।
+                </p>
+
+
+                <p>
+                    হুট করে এমনভাবে বদলে যেও না, যাতে তোমাকে নিয়ে কোনো মানুষের মনে
+                    প্রশ্ন বা সন্দেহ তৈরি হয়।
+                </p>
+
+
+                <p>
+                    আর তুমি যার সাথেই থাকো, তাকে ভালো করে রেখো।
+                </p>
+
+
+                <p>
+                    খুব যত্ন করে রেখো।
+                </p>
+
+
+                <p>
+                    তাকে কম ভালোবেসো না।
+                </p>
+
+
+                <p>
+                    আর আমার সাথে যে ভুলগুলো করেছিলে, সেগুলো আর কারও সাথে করো না।
+                </p>
+
+
+                <p>
+                    আমি চাই না আর কোনো মানুষ তোমার কারণে আমার মতো কষ্ট পাক।
+                </p>
+
+
+                <p>
+                    তোমার প্রতি আমার কোনো অভিযোগ নেই।
+                </p>
+
+
+                <p>
+                    সত্যি।
+                </p>
+
+
+                <p>
+                    চিন্তা করো না।
+                </p>
+
+
+                <p>
+                    আমি আমার মতো আছি। আমারও অনেক ভুল ছিল। আমি সেগুলো বুঝতে পারছি,
+                    আর নিজের মতো করে ঠিক করার চেষ্টা করছি।
+                </p>
+
+
+                <p>
+                    আর একটা জিনিসের জন্য তোমাকে সত্যিই অনেক ধন্যবাদ দিতে হয়।
+                </p>
+
+
+                <p>
+                    জীবনে অনেক romantic হয়েছি, অনেক গান শুনেছি।
+                </p>
+
+
+                <p>
+                    কিন্তু তুমি না এলে, আর তুমি না চলে গেলে, হয়তো এই গানগুলোর
+                    অনেকগুলোর মানেই কখনো বুঝতাম না।
+                </p>
+
+
+                <p>
+                    তুমি না এলে হয়তো আমি জানতামই না, একটা মানুষকে miss করা কেমন।
+                </p>
+
+
+                <p>
+                    কোনো একটা গানের লাইনে নিজের গল্প খুঁজে পাওয়া কেমন।
+                </p>
+
+
+                <p>
+                    কাউকে মনে পড়লে বুকের ভেতরটা হঠাৎ খালি হয়ে যাওয়া কেমন।
+                </p>
+
+
+                <p>
+                    তুমি আমাকে অনেক কিছু অনুভব করতে শিখিয়েছো।
+                </p>
+
+
+                <p>
+                    অনেক কিছু বুঝিয়েছো।
+                </p>
+
+
+                <p>
+                    তাই তোমাকে অনেক অনেক ধন্যবাদ।
+                </p>
+
+
+                <p>
+                    আর যেখানেই থাকো, যার সাথেই জীবন কাটাও—ভালো করে কাটাও।
+                </p>
+
+
+                <p>
+                    জীবনটাকে enjoy করতে শেখো।
+                </p>
+
+
+                <p>
+                    হাসো, ঘুরো, নিজের মতো করে বাঁচো।
+                </p>
+
+
+                <p>
+                    আর শারীরিক সুখের কথা বললে… সেটা হয়তো আমার থেকেও অন্য কেউ
+                    অনেক ভালোভাবে দিতে পারবে। এটা নিয়ে চিন্তা করো না।
+                </p>
+
+
+                <p>
+                    শুধু একটা অনুরোধ—
+                </p>
+
+
+                <p>
+                    আমাকে কখনো মানসিক সুখের জায়গায় মনে করো না।
+                </p>
+
+
+                <p>
+                    কারণ তোমার জীবনে আমার replacement যে আছে, বা একদিন যে আসবে,
+                    সে হয়তো সেটা জানলে কষ্ট পাবে।
+                </p>
+
+
+                <p>
+                    আমি চাই না আমার জন্য আর কারও মন খারাপ হোক।
+                </p>
+
+
+                <p>
+                    তুমি তোমার জীবন নিয়ে এগিয়ে যাও।
+                </p>
+
+
+                <p>
+                    আমি আমারটা নিয়ে এগিয়ে যাওয়ার চেষ্টা করব।
+                </p>
+
+
+                <p>
+                    হয়তো কোনোদিন তোমার কথা আর মনে পড়বে না।
+                </p>
+
+
+                <p>
+                    হয়তো কোনোদিন আমার কথাও তোমার মনে পড়বে না।
+                </p>
+
+
+                <p>
+                    সেটাই ভালো।
+                </p>
+
+
+                <p>
+                    কিছু মানুষকে মনে না রাখাই হয়তো তাদের জন্য শেষ সম্মান।
+                </p>
+
+
+                <p>
+                    তাই আমাকে ভুলে যেও।
+                </p>
+
+
+                <p>
+                    আমাকে মনে রেখো না।
+                </p>
+
+
+                <p>
+                    আমাদের গল্পটা মনে রেখো না।
+                </p>
+
+
+                <p>
+                    শুধু নিজের জীবনটা ভালোভাবে বাঁচো।
+                </p>
+
+
+                <p>
+                    আর যদি কোনোদিন খুব হঠাৎ আমার কথা মনে পড়ে যায়, তখন শুধু মনে করো—
+                    একটা মানুষ ছিল, যে তোমাকে সত্যি ভালোবেসেছিল।
+                </p>
+
+
+                <p>
+                    তারপর আবার নিজের জীবনে ফিরে যেও।
+                </p>
+
+
+                <p>
+                    আমিও যাব।
+                </p>
+
+
+                <p>
+                    হয়তো সময় লাগবে।
+                </p>
+
+
+                <p>
+                    হয়তো অনেকটা সময়।
+                </p>
+
+
+                <p>
+                    তবুও যাব।
+                </p>
+
+
+                <!-- ENDING -->
+
+                <div class="ending">
+
+                    <p>যেখানেই থাকো, ভালো থেকো।</p>
+
+                    <p>শান্তিতে থেকো।</p>
+
+                    <p>সুখে থেকো।</p>
+
+                    <p>নিজের যত্ন নিও।</p>
+
+                    <p>আর জীবনটাকে সুন্দর করে বাঁচো।</p>
+
+                    <p class="final-wish">
+                        এটাই আমার শেষ চাওয়া।
+                    </p>
+
+
+                    <div class="signature-area">
+
+                        <p>
+                            ভালো থেকো।
+                        </p>
+
+                        <div class="signature">
+                            — আমি
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+
+            <!-- FOOTER -->
+
+            <footer class="footer">
+
+                কিছু কথা শেষ হয়ে যায় না,
+                শুধু একদিন বলা বন্ধ হয়ে যায়।
+
+            </footer>
+
+
+        </div>
+
+    </article>
+
+</div>
+
+</body>
+</html>
